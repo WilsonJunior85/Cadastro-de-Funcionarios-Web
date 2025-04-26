@@ -1,0 +1,130 @@
+<div class="card shadow">
+  <div class="card-header">
+    <div class="d-flex label-web ps-4 pe-4">
+      <div class="p-2 flex-grow-1 bd-highlight crumb">
+        <span *ngFor="let pagina of paginaAtual">
+          <a routerLink="{{pagina}}"> {{pagina | titlecase }} </a>
+          <!-- <fa-icon [icon]="faAngleRight" class="fa-md text-primary"
+            *ngIf="(paginaAtual.lastIndexOf(pagina) != (paginaAtual.length-1))"></fa-icon> -->
+        </span>
+      </div>
+      <!-- <app-busca-rapida></app-busca-rapida> -->
+      <div class="d-flex flex-row">
+        <!-- <app-botao-cabecario (return)="exportar()" event="true" label="Exportar"
+          [icon]="faFileExcel"></app-botao-cabecario> -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="card-body">
+    <form class="form" [formGroup]="form!">
+      <div class="row ps-4 pe-4">
+
+        <div class="col-sm-2 form-group">
+          <label for="id">Id</label>
+          <input class="form-control form-control-sm" type="number" formControlName="id" />
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="nome">Nome</label>
+          <input class="form-control form-control-sm" type="text" formControlName="nome" />
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="sobrenome">Sobrenome</label>
+          <input class="form-control form-control-sm" type="text" formControlName="sobrenome" />
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="departamento">Departamento</label>
+          <select class="form-select form-select-sm" name="departamento" type="text" formControlName="departamento">
+            <option [value]=></option>
+            <option [value]="'TI'">TI</option>
+            <option [value]="'Logistica'">Logistica</option>
+            <option [value]="'RH'">RH</option>
+            <option [value]="'Financeiro'">Financeiro</option>
+          </select>
+        </div>
+
+
+        <div class="col-sm-2 form-group">
+          <label for="turno">Turno</label>
+          <select class="form-select form-select-sm" name="turno" type="text" formControlName="turno">
+            <option [value]=></option>
+            <option [value]="'Manhã'">Manhã</option>
+            <option [value]="'Tarde'">Tarde</option>
+            <option [value]="'Noite'">Noite</option>
+          </select>
+        </div>
+
+
+        <div class="col-sm-2 form-group">
+          <label for="email">Email</label>
+          <input class="form-control form-control-sm" type="text" formControlName="email" />
+        </div>
+      </div>
+    </form>
+
+
+
+    <div class="row ps-4 pe-4">
+      <div class="col form-group">
+        <div class="float-start">
+          <!-- <input type="submit" value="Buscar" class="btn btn-primary btn-sm inline" /> -->
+          <button class="btn btn-primary btn-sm inline mt-4 w-100"
+            (click)="ListarFuncionarios($event)">Buscar</button>&nbsp;
+        </div>
+        <!-- <app-hidden-filter (eventClick)="filter()"></app-hidden-filter> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-5 shadow" *ngIf="mostrarTabela">
+  <div class="card-body p-0">
+    <div class="table-responsive">
+      <table class="table table-hover" style="text-align: center;">
+        <thead class="thead-header">
+          <tr class="cabecario-height">
+            <th scope="col" class="table-success ">Matricula</th>
+            <th scope="col" class="table-success ">Funcionário</th>
+            <th scope="col" class="table-success">Sobrenome</th>
+            <th scope="col" class="table-success ">Departamento</th>
+            <th scope="col" class="table-success">Turno</th>
+            <th scope="col" class="table-success ">DataDeCriacao</th>
+            <th scope="col" class="table-success">DataAlteracao</th>
+            <th scope="col" class="table-success">Email</th>
+
+          </tr>
+        </thead>
+
+
+        <tbody>
+          <ng-container *ngFor="let item of funcionarios">
+            <tr>
+              <!-- <td scope="col">{{item.id + " - " + " " + item.funcionario}}</td> -->
+              <td scope="col">{{item.id}}</td>
+              <td scope="col">{{item.nome}}</td>
+              <td scope="col">{{item.sobrenome}}</td>
+              <td scope="col">{{item.departamento}}</td>
+              <td scope="col">{{item.turno}}</td>
+              <td scope="col">{{item.dataDeCriacao | date: 'dd/MM/yyyy'}}</td>
+              <td scope="col">{{item.dataAlteracao | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+              <td scope="col">{{item.email}}</td>
+              <!-- <td scope="col">{{getOperadoraNome(item.idoperadora)}}</td> -->
+
+
+              <!-- <td scope="col">{{item.flgAtivo ? 'Ativo' : 'Inativo'}}</td>   -->
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+
+
+      <div *ngIf="false" class="text-center" style="background-color: rgba(0, 0, 0, 0.03);">
+        <h5><label>Nenhum registro encontrado</label></h5>
+      </div>
+    </div>
+  </div>
+</div>
