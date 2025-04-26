@@ -20,7 +20,6 @@ export class FuncionariosService {
 
 
     getAllFuncionarios(): Observable<Result<FuncionariosModel[]>> {
-
         return this.http.get<Result<FuncionariosModel[]>>(this.apiUrl);
     }
 
