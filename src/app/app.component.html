@@ -1,91 +1,86 @@
-<main role="main" class="flex-shrink-0 ">
+<body class="bg-light">
+  <div class="d-flex flex-column min-vh-100">
 
-  <nav
-    class="navbar navbar-expand-md navbar-default navbar-fixed-top align-items-center p-0 mb-0 border-0 flex-grow-0 flex-shrink-0 nav-superior navbar-gradient2">
-    <div class="container-fluid">
-      <a class="navbar-brand ms-5 me-5 text-left" href="#">
-        <img src="assets/cabecalhowj.png" width="80" height="80" style="max-height: 45px;" />
-        <a class="navbar-brand text-gray text-secondary fw-bold fs-4 ms-4" href="#">Soluções</a>
-      </a>
-    </div>
-    <ul class="navbar-nav navbar-right me-5 superior">
-      <li class="nav-item color-nome d-none d-md-block">
-        <!-- <div class="btn-group " > -->
-        <a href="#" class="nav-link" title="Identidade">
-          <fa-icon size="1x"></fa-icon>
+    <!-- Navbar superior -->
+    <nav
+      class="navbar navbar-expand-md navbar-default navbar-fixed-top align-items-center p-0 mb-0 border-0 flex-grow-0 nav-superior navbar-gradient2">
+      <!-- conteúdo da navbar -->
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5 me-5 text-left" href="#">
+          <img src="assets/cabecalhowj.png" width="80" height="80" style="max-height: 45px;" />
+          <a class="navbar-brand text-gray text-secondary fw-bold fs-4 ms-4" href="#">Soluções</a>
         </a>
-        <!-- </div> -->
-      </li>
-      <li class="nav-item color-nome" ngbDropdown>
-        <a class="nav-link dropdown-toggle fw-bold" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
-          <!-- {{nome}} -->
-        </a>
-        <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu dropdown-menu-center fw-bold ">
-          <a ngbDropdownItem class="dropdown-item color-nome">Logout</a>
-        </div>
-      </li>
-    </ul>
-  </nav>
-
-
-
-
-  <nav class="navbar navbar-expand-lg navbar-gradient">
-
-    <div class="container-fluid">
-      <ul class="navbar-nav d-flex flex-row gap-3 align-items-center">
-        <!-- Home -->
-        <li class="text-secondary ms-5" *ngFor="let item of menu">
-          <ng-container *ngIf="item.type === 'link'">
-            <a class="nav-link" [routerLink]="item.navigateToPath">{{ item.alias }}</a>
-          </ng-container>
-
-
-
-          <ng-container *ngIf="item.type === 'dropdown'">
-            <div class="dropdown" [class.show]="item.open">
-              <a class="dropdown-toggle text-secondary" href="#" (click)="toggleDropdown(item); $event.preventDefault()"
-                role="button" [attr.aria-expanded]="item.open" aria-haspopup="true" style="text-decoration: none;">
-                {{ item.alias }}
-              </a>
-
-              <div class="dropdown-menu" [class.show]="item.open">
-                <a class="dropdown-item" *ngFor="let child of item.children" [routerLink]="child.navigateToPath">
-                  {{ child.alias }}
-                </a>
-              </div>
-            </div>
-          </ng-container>
+      </div>
+      <ul class="navbar-nav navbar-right me-5 superior">
+        <li class="nav-item color-nome d-none d-md-block">
+          <!-- <div class="btn-group " > -->
+          <a href="#" class="nav-link" title="Identidade">
+            <fa-icon size="1x"></fa-icon>
+          </a>
+          <!-- </div> -->
+        </li>
+        <li class="nav-item color-nome" ngbDropdown>
+          <a class="nav-link dropdown-toggle fw-bold" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
+            <!-- {{nome}} -->
+          </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu dropdown-menu-center fw-bold ">
+            <a ngbDropdownItem class="dropdown-item color-nome">Logout</a>
+          </div>
         </li>
       </ul>
+    </nav>
+
+
+    <!-- Navbar de menu -->
+    <nav class="navbar navbar-expand-lg navbar-gradient">
+      <!-- conteúdo da navbar -->
+      <div class="container-fluid">
+        <ul class="navbar-nav d-flex flex-row gap-3 align-items-center">
+          <!-- Home -->
+          <li class="text-secondary ms-5" *ngFor="let item of menu">
+            <ng-container *ngIf="item.type === 'link'">
+              <a class="nav-link" [routerLink]="item.navigateToPath">{{ item.alias }}</a>
+            </ng-container>
 
 
 
-      <!-- <form class="d-flex ms-auto me-3 my-2 my-lg-0">
-        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-        <button class="btn btn-outline-success my-2 my-sm-0 text-white" type="submit">Pesquisar</button>
-      </form> -->
-    </div>
-  </nav>
+            <ng-container *ngIf="item.type === 'dropdown'">
+              <div class="dropdown" [class.show]="item.open">
+                <a class="dropdown-toggle text-secondary" href="#"
+                  (click)="toggleDropdown(item); $event.preventDefault()" role="button" [attr.aria-expanded]="item.open"
+                  aria-haspopup="true" style="text-decoration: none;">
+                  {{ item.alias }}
+                </a>
+
+                <div class="dropdown-menu" [class.show]="item.open">
+                  <a class="dropdown-item" *ngFor="let child of item.children" [routerLink]="child.navigateToPath">
+                    {{ child.alias }}
+                  </a>
+                </div>
+              </div>
+            </ng-container>
+          </li>
+        </ul>
 
 
 
+        <!-- <form class="d-flex ms-auto me-3 my-2 my-lg-0">
+          <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button class="btn btn-outline-success my-2 my-sm-0 text-white" type="submit">Pesquisar</button>
+        </form> -->
+      </div>
+    </nav>
 
+    <!-- Conteúdo principal -->
+    <main class="flex-grow-1 mt-4 px-4">
+      <router-outlet></router-outlet>
+    </main>
 
-  <!-- <app-loader></app-loader> -->
-  <!-- <app-toasts aria-live="polite" aria-atomic="true"></app-toasts> -->
-  <!-- <nav-bar brandImg="../assets/Serede_logo cor.svg" [dataMenu]="menu"></nav-bar> -->
-  <div class="container-fluid content mt-2 mb-2">
-    <router-outlet></router-outlet>
+    <!-- Footer fixo no final da tela -->
+    <footer class="bg-secondary-subtle text-white text-center py-3 navbar-gradient">
+      <img src="assets/logo-preto-branco.png" width="80" height="80" style="max-height: 45px;" />
+      <p class="mb-0">© 2025 - Meu Sistema</p>
+    </footer>
+
   </div>
-</main>
-
-<!-- <footer-bar class="footer mt-auto"></footer-bar> -->
-
-<!-- <router-outlet></router-outlet> -->
-<!-- <hr class="m-0">
-<footer class="bg-light py-3">
-  <div class="content">
-    <img src="assets/logo-preto-branco.png" alt="Logo" width="150" height="80" class="footer-logo">
-  </div>
-</footer> -->
+</body>

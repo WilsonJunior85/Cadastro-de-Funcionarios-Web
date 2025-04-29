@@ -14,3 +14,21 @@
 .no-pointer {
   cursor: default !important;
 }
+
+
+
+
+/* Garantir que a altura da página seja limitada e sem rolagem */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  /* Remove a barra de rolagem */
+}
+
+/* Evitar que o conteúdo ultrapasse a altura da tela */
+.d-flex {
+  overflow-y: auto;
+  /* Permite rolar se necessário, mas só dentro do conteúdo */
+}
