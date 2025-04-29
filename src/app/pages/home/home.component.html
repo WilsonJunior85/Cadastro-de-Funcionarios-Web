@@ -52,7 +52,7 @@
           <label for="turno">Turno</label>
           <select class="form-select form-select-sm" name="turno" type="text" formControlName="turno">
             <option [value]=></option>
-            <option [value]="'Manhã'">Manhã</option>
+            <option [value]="'Manha'">Manhã</option>
             <option [value]="'Tarde'">Tarde</option>
             <option [value]="'Noite'">Noite</option>
           </select>
@@ -81,12 +81,14 @@
   </div>
 </div>
 
-<div class="card mt-5 shadow" *ngIf="mostrarTabela">
+<div class="card mt-6 shadow" *ngIf="mostrarTabela">
   <div class="card-body p-0">
     <div class="table-responsive">
       <table class="table table-hover" style="text-align: center;">
         <thead class="thead-header">
           <tr class="cabecario-height">
+            <th scope="col" class="table-success" style="transition: background-color 0.3s;"
+              onmouseover="this.style.backgroundColor='#4b96b9'" onmouseout="this.style.backgroundColor=''">Ações</th>
             <th scope="col" class="table-success ">Matricula</th>
             <th scope="col" class="table-success ">Funcionário</th>
             <th scope="col" class="table-success">Sobrenome</th>
@@ -103,6 +105,14 @@
         <tbody>
           <ng-container *ngFor="let item of funcionarios">
             <tr>
+
+              <td scope="col">
+                <button class="btn btn-primary btn-sm inline mt-4 w-100"
+                  [routerLink]="['/editar-funcionarios', item.id]">
+                  Editar
+                </button>
+              </td>
+
               <!-- <td scope="col">{{item.id + " - " + " " + item.funcionario}}</td> -->
               <td scope="col">{{item.id}}</td>
               <td scope="col">{{item.nome}}</td>

@@ -1,13 +1,13 @@
 export class FuncionariosModel {
-    public id: number;
-    public nome: string;
-    public sobrenome: string;
-    public departamento: string;
-    public ativo: boolean;
-    public turno: string;
+    public id?: number;
+    public nome?: string;
+    public sobrenome?: string;
+    public departamento?: string;
+    public ativo?: boolean;
+    public turno?: string;
     public dataDeCriacao: Date;
     public dataAlteracao: Date;
-    public email: string;
+    public email?: string;
 
 
 

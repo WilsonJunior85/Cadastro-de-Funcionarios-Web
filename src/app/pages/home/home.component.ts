@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { FuncionariosModel } from 'src/app/models/funcionarios';
 import { FuncionariosQuery } from 'src/app/seletores/Funcionarios-query';
@@ -27,6 +28,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public funcionarioService: FuncionariosService,
+    private router: Router,
 
   ) {
     this.form = this.montarForm();
@@ -49,6 +51,7 @@ export class HomeComponent implements OnInit {
       departamento: new FormControl("", []),
       turno: new FormControl("", []),
       email: new FormControl("", []),
+      ativo: new FormControl(true), // <- importante
 
     });
   }

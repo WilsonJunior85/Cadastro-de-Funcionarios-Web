@@ -7,7 +7,7 @@ import { EditarFuncionariosComponent } from './pages/menu/editar-funcionarios/ed
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cadastrar-funcionarios', component: CadastrarFuncionariosComponent },
-  { path: 'editar-funcionarios', component: EditarFuncionariosComponent },
+  { path: 'editar-funcionarios/:id', component: EditarFuncionariosComponent },
 
 
 ];
