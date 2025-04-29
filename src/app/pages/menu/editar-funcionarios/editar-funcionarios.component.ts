@@ -13,7 +13,7 @@ import { FuncionariosService } from 'src/app/services/FuncionariosService';
 export class EditarFuncionariosComponent implements OnInit {
 
   public form!: FormGroup;
-  public paginaAtual = ['Editar Funcionários ', ' Editar'];
+  public paginaAtual = ['Editar Funcionários'];
   public funcionarios: FuncionariosModel[] = [];
   public funcionariosObject: FuncionariosModel = new FuncionariosModel();
 
