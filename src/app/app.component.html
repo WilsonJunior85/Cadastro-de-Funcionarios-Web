@@ -30,12 +30,12 @@
 
 
 
-  <nav class="navbar navbar-expand-lg navbar-gradient w-100">
+  <nav class="navbar navbar-expand-lg navbar-gradient">
 
     <div class="container-fluid">
       <ul class="navbar-nav d-flex flex-row gap-3 align-items-center">
         <!-- Home -->
-        <li class="text-secondary" *ngFor="let item of menu">
+        <li class="text-secondary ms-5" *ngFor="let item of menu">
           <ng-container *ngIf="item.type === 'link'">
             <a class="nav-link" [routerLink]="item.navigateToPath">{{ item.alias }}</a>
           </ng-container>
@@ -75,7 +75,7 @@
   <!-- <app-loader></app-loader> -->
   <!-- <app-toasts aria-live="polite" aria-atomic="true"></app-toasts> -->
   <!-- <nav-bar brandImg="../assets/Serede_logo cor.svg" [dataMenu]="menu"></nav-bar> -->
-  <div class="container content mt-2 mb-2">
+  <div class="container-fluid content mt-2 mb-2">
     <router-outlet></router-outlet>
   </div>
 </main>

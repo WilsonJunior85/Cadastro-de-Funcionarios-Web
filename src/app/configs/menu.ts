@@ -33,15 +33,15 @@ export const Menu: any = [
         type: 'dropdown',
         children: [
             {
-                alias: 'Cadastro de Funcionários',
+                alias: 'RH',
                 canRender: [{ 'teste.acesso': ['Sim'] }],
-                navigateToPath: 'cadastrar-funcionarios',
+                navigateToPath: 'rh-funcionarios',
                 type: 'link',
             },
             {
-                alias: 'Editar Funcionários',
+                alias: 'TI',
                 canRender: [{ 'teste.acesso': ['Sim'] }],
-                navigateToPath: 'editar-funcionarios',
+                navigateToPath: 'ti-equipamentos',
                 type: 'link',
             },
             // {

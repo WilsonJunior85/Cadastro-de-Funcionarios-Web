@@ -45,6 +45,14 @@ export class FuncionariosService {
         return this.http.get<ApiResponse<FuncionariosModel>>(url);
     }
 
+
+    adicionarFuncionario(funcionario: FuncionariosModel): Observable<any> {
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        return this.http.post(`${this.apiUrl}`, funcionario, { headers });
+    }
+
+
+
     openFileDialog() {
         const fileInput: any = document.querySelector('input[type="file"]');
         fileInput?.click();

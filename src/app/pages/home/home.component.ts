@@ -15,8 +15,9 @@ import { FuncionariosService } from 'src/app/services/FuncionariosService';
 })
 export class HomeComponent implements OnInit {
 
+
   public form!: FormGroup;
-  public paginaAtual = ['Status Funcionários ', ' LISTAGEM'];
+  public paginaAtual = ['Pesquisar Funcionários'];
   public funcionarios: FuncionariosModel[] = [];
   public listarfuncionarios: FuncionariosModel[] = [];
   public funcionario: any[] = [];
@@ -99,6 +100,11 @@ export class HomeComponent implements OnInit {
     this.mostrarTabela = this.funcionarios.length > 0;
   }
 
+
+
+  CadastrarFuncionarios(event: Event): void {
+    this.router.navigate(['/cadastrar-funcionarios']); // Substitua pela rota correta
+  }
 
 }
 

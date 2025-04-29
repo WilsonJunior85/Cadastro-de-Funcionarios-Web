@@ -1,15 +1,16 @@
 .navbar-gradient {
-    background: linear-gradient(to right, #cccccc, #2c2c2c ); /* De cinza escuro a claro */
-    color: white;
-  }
+  background: linear-gradient(to right, #cccccc, #2c2c2c);
+  /* De cinza escuro a claro */
+  color: white;
+}
 
-  .navbar-gradient2 {
-    // background: linear-gradient(to right, #8bacf1, #caf7fd ); /* De cinza escuro a claro */
-    background:white ;
-    color: white;
-  }
+.navbar-gradient2 {
+  // background: linear-gradient(to right, #8bacf1, #caf7fd ); /* De cinza escuro a claro */
+  background: white;
+  color: white;
+}
 
 
-  .no-pointer {
-    cursor: default !important;
-  }
+.no-pointer {
+  cursor: default !important;
+}

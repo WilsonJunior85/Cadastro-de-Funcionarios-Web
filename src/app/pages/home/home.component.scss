@@ -1,11 +1,18 @@
 th.table-success:hover {
-    background-color: #4b96b9; /* ou qualquer cor desejada */
-    cursor: pointer; /* opcional: mostra que é clicável */
+    background-color: #4b96b9;
+    /* ou qualquer cor desejada */
+    cursor: pointer;
+    /* opcional: mostra que é clicável */
     transition: background-color 0.3s;
-  }
+}
 
-  .td-hover-blue:hover {
+.td-hover-blue:hover {
     background-color: #85a9cf !important;
     transition: background-color 0.3s;
     cursor: pointer;
-  }
+}
+
+.breadcrumb-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}

@@ -3,7 +3,9 @@
     <div class="d-flex label-web ps-4 pe-4">
       <div class="p-2 flex-grow-1 bd-highlight crumb">
         <span *ngFor="let pagina of paginaAtual">
-          <a routerLink="{{pagina}}"> {{pagina | titlecase }} </a>
+          <a routerLink="{{pagina}}" class="h1 text-decoration-none breadcrumb-text">
+            {{ pagina | titlecase }}
+          </a>
           <!-- <fa-icon [icon]="faAngleRight" class="fa-md text-primary"
             *ngIf="(paginaAtual.lastIndexOf(pagina) != (paginaAtual.length-1))"></fa-icon> -->
         </span>
@@ -12,6 +14,21 @@
       <div class="d-flex flex-row">
         <!-- <app-botao-cabecario (return)="exportar()" event="true" label="Exportar"
           [icon]="faFileExcel"></app-botao-cabecario> -->
+
+        <div class="row ps-6 pe-6">
+          <div class="col form-group">
+            <div class="float-start">
+              <!-- <input type="submit" value="Buscar" class="btn btn-primary btn-sm inline" /> -->
+              <button class="btn btn-primary btn-sm inline mt-4 w-100"
+                (click)="CadastrarFuncionarios($event)">Cadastrar</button>&nbsp;
+            </div>
+            <!-- <app-hidden-filter (eventClick)="filter()"></app-hidden-filter> -->
+          </div>
+        </div>
+
+
+
+
       </div>
     </div>
   </div>
@@ -19,7 +36,7 @@
 
   <div class="card-body">
     <form class="form" [formGroup]="form!">
-      <div class="row ps-4 pe-4">
+      <div class="row ps-4 pe-4 ">
 
         <div class="col-sm-2 form-group">
           <label for="id">Id</label>

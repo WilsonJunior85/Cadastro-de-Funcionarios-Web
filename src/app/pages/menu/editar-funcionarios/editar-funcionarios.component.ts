@@ -37,24 +37,9 @@ export class EditarFuncionariosComponent implements OnInit {
 
   ngOnInit(): void {
     this.carregarFuncionario();  // Carrega os dados do funcionário ao inicializar o componente
-    // this.montarForm();
     this.carregarForm();
 
   }
-
-
-  // private montarForm(): FormGroup {
-  //   return new FormGroup({
-  //     id: new FormControl("", []),
-  //     nome: new FormControl("", []),
-  //     sobrenome: new FormControl("", []),
-  //     departamento: new FormControl("", []),
-  //     turno: new FormControl("", []),
-  //     email: new FormControl("", []),
-  //     ativo: new FormControl(true), // <- importante
-
-  //   });
-  // }
 
 
 
