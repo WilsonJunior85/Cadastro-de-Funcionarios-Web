@@ -106,6 +106,11 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/cadastrar-funcionarios']); // Substitua pela rota correta
   }
 
+
+  Teste() {
+
+  }
+
 }
 
 
